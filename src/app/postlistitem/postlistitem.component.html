@@ -1,0 +1,30 @@
+<ul class="list-group-item">
+
+
+  <li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+
+    <div style="margin-bottom: 10px">
+      <span style="font-size: 25px;"> {{ title }}</span>
+      <span class="pull-right"> {{ createdAt | date: 'short' }}</span>
+    </div>
+
+    <div style="margin-bottom: 20px">
+      {{ content }}
+    </div>
+    <div>
+      <button style="width: 100px; margin-right: 20px;margin-left: 30px" type="button" class="btn btn-success btn-sm"
+              (click)="onLoveIt()">love it
+      </button>
+      <button style="width: 100px; margin-right: 30px" type="button" class="btn btn-danger btn-sm"
+              (click)="onDontLoveIt()">don't love it
+      </button>
+      <!--<span [ngClass]="{button rating-up fa :true;'fa-thumbs-o-up' : loveIts > 0, 'fa-thumbs-o-up' :loveIts < 0 }">{{loveIts}}</span> -->
+      <span *ngIf="loveIts >= 0" class="button rating-up fa fa-thumbs-o-up"> ({{  loveIts  }})</span>
+      <span *ngIf="loveIts < 0" class="button rating-up fa fa-thumbs-o-down"> ({{  loveIts  }})</span>
+    </div>
+
+  </li>
+</ul>
+<br>

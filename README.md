@@ -6,4 +6,6 @@ pour execcuter le projet il faut utiliser les commande suivante:
 2- npm install
 3- ng serve
 
+Merci bien *_*
+
 
